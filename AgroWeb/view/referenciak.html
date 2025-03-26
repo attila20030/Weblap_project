@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/referenciak.css">
+  <title>Referenciák</title>
+</head>
+<body>
+  <h1 class="title">Referenciák</h1>
+<div class="slideshow-container">
+
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="../images/kep2.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="../images/kep3.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="../images/kep4.jpg" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<div class="text">
+  <p>A kombájnok a betakarítás kulcsgépei, ezeken múlik ugyanis, hogy a magok tökéletes állapotban, tisztán kerülnek-e majd az üzemekhez – mindez nagyon rövid idő alatt. Ennél azonban több érdekes adatot mutatunk meg most a betakarító-kolosszusokról. <br>
+
+    A kombájn eredete a kaszákra vezethető vissza, amiket 1826-ban talált fel Patrick Bell lelkész Spanyolországban. A „Bell Reaper”-t lovak tolták, és vágási technológiáját tekintve két, egymás felett található késsel dolgozott. A vágóegységet a gép kerekei hajtották. A motolla csak később került a gépbe. <br>
+    
+    Az egykori NDK-ban az akkor érvényes fizetőeszköz, a Deutsche Mark hátoldalán egy kombájn, egészen konkrétan egy Fortschritt E 512 volt látható. <br>
+    
+    A betakarítás során a törtmag-arány rendkívül fontos mérőszám. A tört szemek aránya csökken, minél gyorsabban dolgozunk a kombájnnal. Ennek az az oka, hogy a gyarapodó szalmaréteg megvédi a magokat a cséplőszerkezetben az ütődésektől, verődésektől. De vigyázat! Aki gyorsan halad, annak a folyamatokat is a növekvő áteresztéshez kell igazítania. Különben csak egyre nagyobb lesz a veszteség.</p> 
+  </div>
+
+  <button onclick="window.location.href='../view/geoagrodrone.html'" class="btn">Vissza a főoldalra</button>
+
+
+
+
+
+<script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+  }
+  </script>
+</body>
+</html>
